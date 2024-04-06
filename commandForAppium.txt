@@ -1,0 +1,5 @@
+ appium --base-path /wd/hub  -  command for running Appium Server in order to run Appium Inspector afterwards
+
+ netstat -ano | findstr :<port_number> - command to check if the specified port has any process
+
+ taskkill /PID <process id> /F - command to kill process with the specified id
