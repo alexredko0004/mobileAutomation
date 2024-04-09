@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "@wdio/cli": "^8.35.1",
-    "appium": "^2.5.1"
+    "appium": "^2.5.1",
+    "chai": "^5.1.0"
   },
   "devDependencies": {
     "@wdio/appium-service": "^8.35.1",

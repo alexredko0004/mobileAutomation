@@ -58,7 +58,7 @@ exports.config = {
         'appium:deviceName': 'Pixel 8 Pro API 34',
         'appium:platformVersion': '14.0',
         'appium:automationName': 'UiAutomator2',
-        'appium:app':path.join(process.cwd(), "./androidApp/ApiDemos-debug.apk")
+        //'appium:app':path.join(process.cwd(), "./androidApp/ColorNote Notepad.apk")
     }],
 
     //
@@ -197,8 +197,12 @@ exports.config = {
      * @param {Array.<String>} specs        List of spec file paths that are to be run
      * @param {object}         browser      instance of created browser/device session
      */
-    // before: function (capabilities, specs) {
-    // },
+    before: async () => {
+        await import('expect-webdriverio');
+        global.wdioExpect = global.expect;
+        const chai = await import('chai');
+        global.expect = chai.expect;
+    },
     /**
      * Runs before a WebdriverIO command gets executed.
      * @param {string} commandName hook command name
